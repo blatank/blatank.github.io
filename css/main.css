@@ -292,3 +292,42 @@ h2 ~ p {
 .col-three .col-aside {
   flex: 0 1 20em;
 }
+
+/* galleryスタイル */
+.gallery-thumbs {
+  height: 90vh;                       /* 10vhはヘッダの分。なので残り全部 */
+  overflow: scroll;                   /* 入らない場合はスクロールする */
+}
+.gallery-thumbs > div {               /* gallery-thumbs直下のdiv */
+  cursor: pointer;                    /* 画像の領域はポインタ表示 */
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;              /* マージン適用するためにinline-block化 */
+  margin: 0 0 10px;                   /* 下に10pxマージン */
+  opacity: 0.5;                       /* 画像を半透明に */
+  transition: all 0.5s ease-in-out;   /* 変化時のアニメーション */
+  width: 100%;                        /* 幅は親の100%サイズ */
+}
+.gallery-thumbs img:hover {           /* ホバー時 */
+  opacity: 1;                         /* 半透明を解除 */
+}
+.gallery-thumbs .current img {
+  box-shadow: 0 0 0 5px #ed6e2f;    /* 選択中を示す枠を表示 */
+  opacity: 1;                         /* 半透明を解除 */
+}
+
+.gallery-photo {
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;                        /* 幅は親の100%サイズ */
+}
+
+.gallery-info {
+  font-size: 0.8rem;
+}
+.gallery-info h3 {
+  margin-bottom: 1em;
+}
