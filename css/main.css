@@ -22,6 +22,11 @@ h1 {
 h2 {
   font-size: 2em;
 }
+h4 {
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 a {
   color: #6397b5;
 }
@@ -267,30 +272,56 @@ h2 ~ p {
 }
 
 /* col */
-.col-three {
-  display: flex;
-  flex: 1;
-}
-
 .col {
   box-sizing: border-box;
   padding: 2em;
 }
 
+.col-three {
+  display: flex;
+  flex: 1;
+}
 .col-three .col ~ .col {
   border-left: 1px solid rgba(0, 0, 0, 0.1)
 }
-
 .col-three .col-nav {
   flex: 0 1 15em;
 }
-
 .col-three .col-content {
   flex: 1;
 }
 
 .col-three .col-aside {
   flex: 0 1 20em;
+}
+
+.col-two {
+  display: flex;
+}
+.col-two .col-aside {
+  flex: 0 1 20em; /* side barとしてはサイズ決め打ち */
+  order: 1;       /* 2番目に表示(defaultが0) */
+}
+.col-two .col-content {
+  flex: 1;
+}
+
+/* page */
+.page {
+  margin: 10vh auto 15vh;
+  max-width: 980px;       /* 最大サイズ */
+  width: 85vw;            /* 85%だけ幅にする(がMax980px) */
+}
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.page h2 {
+  margin-bottom: 0.5em;
+}
+.page h4 {
+  margin-bottom: 1em;
 }
 
 /* galleryスタイル */
@@ -330,4 +361,51 @@ h2 ~ p {
 }
 .gallery-info h3 {
   margin-bottom: 1em;
+}
+
+/* blog */
+.blog-recent {
+  text-align: right;        /* .blog-recent以下では右揃え */
+}
+.blog-title-list {
+  list-style: none;         /* リストのドットをなくす */
+}
+.blog-title-list li ~ li {
+  margin-top: 1.5em;        /* リスト間のマージン */
+}
+.blog-title-list span {     /* 日付 */
+  color: #999;            /* 目立たない色に */
+  display: block;           /* 縦margin用 */
+  font-size: 0.8em;         /* フォントを小さく */
+  font-style: italic;       /* 日付部分の書体をitalicに */
+  margin-top: 0.5em;        /* 記事のタイトルから少しマージンとる */
+}
+
+.blog-posts ~ .blog-posts { /* ブログ記事間のスタイル */ 
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);  /* 区切り線 */
+  margin-top: 4em;          /* 斜線より上にマージン */
+  padding-top: 4em;         /* 斜線から下にマージン */
+}
+
+.blog-posts .post-header {  /* 記事ヘッダ部分 */
+  font-size: 0.8rem;        /* 記事タイトルを少し小さくする */
+}
+.post-header {
+  margin-bottom: 1.5em;     /* 記事ヘッダ下のマージン */
+}
+.post-header img,
+.post-header .social-link {
+  margin-right: 0.5em;      /* 記事タイトル下の画像とリンクにマージンを持たせる */
+}
+.post-header img {
+  border-radius: 99px;      /* 投稿者の画像を丸くする */
+  display: inline-block;    /* 高さ設定/垂直方向位置調整用 */
+  height: 2.5em;            /* 高さ設定 */
+  vertical-align: middle;   /* 垂直方向の真ん中に配置 */
+}
+.post-image {               /* 投稿イメージ(記事に使われている画像) */
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+  margin-bottom: 1.5em;
 }
