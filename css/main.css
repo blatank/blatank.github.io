@@ -174,6 +174,12 @@ h2 ~ p {
   background-position: center top;
 }
 
+.half-hero {
+  background-position: center center;
+  background-size: cover;
+  height: 40vh;
+}
+
 /* SNSスタイル */
 .social-link {
   background: rgba(150, 150, 150, 0.5);
@@ -247,6 +253,17 @@ h2 ~ p {
 .home-section h2 {
   margin-bottom: 1.5em;
   text-align: center;
+}
+.home-section h4 {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.home-section .post-header {
+  text-align: center;
+}
+.home-section .blog-posts {
+  margin: auto;
+  width: 75%;
 }
 .home-callout {
   align-items: center;
@@ -408,4 +425,42 @@ h2 ~ p {
   background-size: cover;
   height: 6em;
   margin-bottom: 1.5em;
+}
+
+.post {
+  width: 100%;
+}
+.post-content,
+.post-footer {
+  margin: auto;
+  max-width: 40em;          /* contentの幅は最大40em */
+  width: 85vw;              /* contentの幅は85vw */
+}
+.pull-left {
+  float: left;
+  margin: 2em 2em 2em -2%;
+}
+.pull-right {
+  float: right;
+  margin: 2em -2% 2em 2em;
+}
+.post-aside {
+  background-color: rgba(0, 0, 0, 0.01);
+  float: right;             /* contentの右に配置 */
+  margin: 0 0 2em 2em;      /* 下と左に2emマージン */
+  padding: 2em;
+}
+.post .post-header {
+  margin-bottom: 2.5em;     /* 記事タイトル下のマージン */
+  text-align: center;       /* タイトル/author/日付は中央寄せ */
+}
+.post-content {
+  font-size: 1.1rem;        /* 記事本文のフォントサイズ */
+}
+.post-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* 区切り線 */
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 3em;          /* 本文から区切り線までのマージン */
+  padding-top: 2em;         /* 区切り線からフッタまでのマージン */
 }
