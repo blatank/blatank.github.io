@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home">  <!-- .content-containerがflxのため、.homeを内部の単一の要素としてこれで縦並びに戻す -->
   <div class="full-hero hero-home">
     <div class="hero-content">
       <h1>CODE DANGEROUSLY</h1>
@@ -53,22 +53,23 @@ layout: default
   </div>
   
   <div class="home-section">
+    <!-- 新着記事のプレビュー表示 -->
     <h4>Most recent post</h4>
     <div class="blog-posts">
       <header class="post-header">
         <h2>
-          <a href="{{ site.posts.first.url }}">
-            {{ site.posts.first.title }}</a>
-        </h2>
-        <div class="post byline">
-          <img src="{{ site.posts.first.gravatar }}">
-          <a href="{{ site.posts.first.authorTwitter }}" class="social-link">
-            Tw
+          <a href="{{site.posts.first.url }}">
+            {{ site.posts.first.title }}
           </a>
-          <span>by: {{ site.posts.first.date | date: '%B %d %Y' }}</span>
+        </h2>
+        <div class="post-byline">
+          <img src="{{ site.posts.first.gravatar }}">
+          <a href="{{ site.posts.first.authorTwietter }}" class="social-link">Tw</a>
+          by: {{ site.posts.first.author }}
+          <span> - {{ site.posts.first.date | date: '%B %d, %Y' }}</span>
         </div>
       </header>
-      <div class="posts-image" style="background-image: url({{ site.posts.first.postHero }});"></div>
+      <div class="posts-image" style="background-image: url( sites.posts.first.postHero);"></div>
       {{ site.posts.first.excerpt }}
     </div>
 
@@ -127,5 +128,5 @@ layout: default
         </div>
       </div>
     </div>  <!-- .bio-wrapper -->
-  </div>    <!-- .home-callout -->  
-</div>
+  </div>    <!-- .home-callout -->
+</div>      <!-- .home -->

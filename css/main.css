@@ -12,7 +12,7 @@ body {
 .content-container {
   display: flex;
   flex: 1 1 auto;
-  padding-top: 10vh;
+  padding-top: 10vh;  /* headerの分 */
   width: 100%;
 }
 h1 {
@@ -129,62 +129,12 @@ h2 ~ p {
   color: #ccc;
 }
 
-/*  カラムスタイル */
-.col-three {
-  display: flex;
-  flex: 1;
-}
-.col {
-  box-sizing: border-box;
-  padding: 2em;
-}
-.col-three .col~.col {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-}
-.col-three .col-nav {
-  flex: 0 1 15em;
-}
-.col-three .col-content {
-  flex: 1;
-}
-.col-three .col-aside {
-  flex: 0 1 20em;
-}
-.col-two {
-  display: flex;
-}
-.col-two .col-aside {
-  flex: 0 0 20em;
-  order: 1;
-}
-.col-two .col-content {
-  flex: 1;
-}
-
-/* ページスタイル */
-.page {
-  margin: 10vh auto 15vh;
-  max-width: 980px;
-  width: 85vw;
-}
-.page h1 {
-  font-size: 3em;
-  margin-bottom: 1em;
-  text-align: center;
-}
-.page h2 {
-  margin-bottom: 0.5em;
-}
-.page h4 {
-  margin-bottom: 1em;
-}
-
 /* ヒーロースタイル */
 .full-hero {
   background-color: #c7dbfc;
   background-size: cover;
   box-sizing: border-box;
-  height: 90vh;
+  height: 90vh; /* body=100vh, header=10vh */
 }
 .full-hero:after {
   border: 10px solid;
@@ -218,15 +168,16 @@ h2 ~ p {
   background-color: #000;
   color: #fff;
 }
-.half-hero {
-  background-position: center center;
-  background-size: cover;
-  height: 40vh;
-}
 
 .hero-home {
   background-image: url(/images/shark.jpg);
   background-position: center top;
+}
+
+.half-hero {
+  background-position: center center;
+  background-size: cover;
+  height: 40vh;
 }
 
 /* SNSスタイル */
@@ -293,123 +244,6 @@ h2 ~ p {
   color: green;
 }
 
-/* ギャラリースタイル */
-.gallery-thumbs {
-  height: 90vh;
-  overflow: scroll;
-}
-.gallery-thumbs > div {
-  cursor: pointer;
-}
-.gallery-thumbs img {
-  box-sizing: border-box;
-  box-shadow: 0 0 0 5px transparent;
-  display: inline-block;
-  margin: 0 0 10px;
-  opacity: 0.5;
-  transition: all 0.5s ease-in-out;
-  width: 100%;
-}
-.gallery-thumbs img:hover {
-  opacity: 1;
-}
-.gallery-thumbs .current img {
-  box-shadow: 0 0 0 5px #ed6e2f;
-  opacity: 1;
-}
-.gallery-photo {
-  position: relative;
-}
-.gallery-photo img {
-  width: 100%;
-}
-.gallery-info {
-  font-size: 0.8rem;
-}
-.gallery-info h3 {
-  margin-bottom: 1em;
-}
-
-/* ブログスタイル */
-.blog-recent {
-  text-align: right;
-}
-.blog-title-list {
-  list-style: none;
-  padding: 0;
-}
-.blog-title-list li ~ li {
-  margin-top: 1.5em;
-}
-.blog-title-list span {
-  color: #999;
-  display: block;
-  font-size: 0.8em;
-  font-style: italic;
-  margin-top: 0.5em;
-}
-.blog-posts ~ .blog-posts {
-  border-top: 1px dotted rgba(0, 0, 0, 0.1);
-  margin-top: 4em;
-  padding-top: 4em;
-}
-.blog-posts .post-header {
-  margin-bottom: 1.5em;
-}
-.post {
-  width: 100%;
-}
-.post-content,
-.post-footer {
-  margin: auto;
-  max-width: 40em;
-  width: 85vw;
-}
-.post-header img,
-.post-header .social-link {
-  margin-right: 0.5em;
-}
-.post-header img {
-  border-radius: 99px;
-  display: inline-block;
-  height: 2.5em;
-  vertical-align: middle;
-}
-.posts-image {
-  background-position: center;
-  background-size: cover;
-  height: 6em;
-  margin-bottom: 1.5em;
-}
-.pull-left {
-  float: left;
-  margin: 2em 2em 2em -2%;
-}
-.pull-right {
-  float: right;
-  margin: 2em -2% 2em 2em;
-}
-.post-aside {
-  background-color: rgba(0, 0, 0, 0.1);
-  float: right;
-  margin: 0 0 2em 2em;
-  padding: 2em;
-}
-.post .post-header {
-  margin-bottom: 2.5em;
-  text-align: center;
-}
-.post-content {
-  font-size: 1.1em;
-}
-.page-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-style: italic;
-  font-size: 0.8em;
-  margin-top: 3em;
-  padding-top: 2em;
-}
-
 /* Homeページスタイル */
 .home-section {
   margin: 6rem auto;
@@ -419,6 +253,17 @@ h2 ~ p {
 .home-section h2 {
   margin-bottom: 1.5em;
   text-align: center;
+}
+.home-section h4 {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.home-section .post-header {
+  text-align: center;
+}
+.home-section .blog-posts {
+  margin: auto;
+  width: 75%;
 }
 .home-callout {
   align-items: center;
@@ -443,69 +288,255 @@ h2 ~ p {
   padding: 0 3vw;
 }
 
-@media (max-width: 800px) {
+/* col */
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+.col-three .col-content {
+  flex: 1;
+}
+
+.col-three .col-aside {
+  flex: 0 1 20em;
+}
+
+.col-two {
+  display: flex;
+}
+.col-two .col-aside {
+  flex: 0 1 20em; /* side barとしてはサイズ決め打ち */
+  order: 1;       /* 2番目に表示(defaultが0) */
+}
+.col-two .col-content {
+  flex: 1;
+}
+
+/* page */
+.page {
+  margin: 10vh auto 15vh;
+  max-width: 980px;       /* 最大サイズ */
+  width: 85vw;            /* 85%だけ幅にする(がMax980px) */
+}
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.page h2 {
+  margin-bottom: 0.5em;
+}
+.page h4 {
+  margin-bottom: 1em;
+}
+
+/* galleryスタイル */
+.gallery-thumbs {
+  height: 90vh;                       /* 10vhはヘッダの分。なので残り全部 */
+  overflow: scroll;                   /* 入らない場合はスクロールする */
+}
+.gallery-thumbs > div {               /* gallery-thumbs直下のdiv */
+  cursor: pointer;                    /* 画像の領域はポインタ表示 */
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;              /* マージン適用するためにinline-block化 */
+  margin: 0 0 10px;                   /* 下に10pxマージン */
+  opacity: 0.5;                       /* 画像を半透明に */
+  transition: all 0.5s ease-in-out;   /* 変化時のアニメーション */
+  width: 100%;                        /* 幅は親の100%サイズ */
+}
+.gallery-thumbs img:hover {           /* ホバー時 */
+  opacity: 1;                         /* 半透明を解除 */
+}
+.gallery-thumbs .current img {
+  box-shadow: 0 0 0 5px #ed6e2f;    /* 選択中を示す枠を表示 */
+  opacity: 1;                         /* 半透明を解除 */
+}
+
+.gallery-photo {
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;                        /* 幅は親の100%サイズ */
+}
+
+.gallery-info {
+  font-size: 0.8rem;
+}
+.gallery-info h3 {
+  margin-bottom: 1em;
+}
+
+/* blog */
+.blog-recent {
+  text-align: right;        /* .blog-recent以下では右揃え */
+}
+.blog-title-list {
+  list-style: none;         /* リストのドットをなくす */
+}
+.blog-title-list li ~ li {
+  margin-top: 1.5em;        /* リスト間のマージン */
+}
+.blog-title-list span {     /* 日付 */
+  color: #999;            /* 目立たない色に */
+  display: block;           /* 縦margin用 */
+  font-size: 0.8em;         /* フォントを小さく */
+  font-style: italic;       /* 日付部分の書体をitalicに */
+  margin-top: 0.5em;        /* 記事のタイトルから少しマージンとる */
+}
+
+.blog-posts ~ .blog-posts { /* ブログ記事間のスタイル */ 
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);  /* 区切り線 */
+  margin-top: 4em;          /* 斜線より上にマージン */
+  padding-top: 4em;         /* 斜線から下にマージン */
+}
+
+.blog-posts .post-header {  /* 記事ヘッダ部分 */
+  font-size: 0.8rem;        /* 記事タイトルを少し小さくする */
+}
+.post-header {
+  margin-bottom: 1.5em;     /* 記事ヘッダ下のマージン */
+}
+.post-header img,
+.post-header .social-link {
+  margin-right: 0.5em;      /* 記事タイトル下の画像とリンクにマージンを持たせる */
+}
+.post-header img {
+  border-radius: 99px;      /* 投稿者の画像を丸くする */
+  display: inline-block;    /* 高さ設定/垂直方向位置調整用 */
+  height: 2.5em;            /* 高さ設定 */
+  vertical-align: middle;   /* 垂直方向の真ん中に配置 */
+}
+.post-image {               /* 投稿イメージ(記事に使われている画像) */
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+  margin-bottom: 1.5em;
+}
+
+.post {
+  width: 100%;
+}
+.post-content,
+.post-footer {
+  margin: auto;
+  max-width: 40em;          /* contentの幅は最大40em */
+  width: 85vw;              /* contentの幅は85vw */
+}
+.pull-left {
+  float: left;
+  margin: 2em 2em 2em -2%;
+}
+.pull-right {
+  float: right;
+  margin: 2em -2% 2em 2em;
+}
+.post-aside {
+  background-color: rgba(0, 0, 0, 0.01);
+  float: right;             /* contentの右に配置 */
+  margin: 0 0 2em 2em;      /* 下と左に2emマージン */
+  padding: 2em;
+}
+.post .post-header {
+  margin-bottom: 2.5em;     /* 記事タイトル下のマージン */
+  text-align: center;       /* タイトル/author/日付は中央寄せ */
+}
+.post-content {
+  font-size: 1.1rem;        /* 記事本文のフォントサイズ */
+}
+.post-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* 区切り線 */
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 3em;          /* 本文から区切り線までのマージン */
+  padding-top: 2em;         /* 区切り線からフッタまでのマージン */
+}
+
+/* media query */
+@media (max-width: 800px) { /* 幅が800px以下 */
   html {
-    box-shadow: none;
-    padding: 0;
+    box-shadow: none;       /* 周囲の黒枠をなくす */
+    padding: 0;             /* paddingもなくす */
   }
 
   /* header */
   .header-nav {
     padding: 2vh 1em 0 0;
   }
-  .header-nav > li {
+  .header-nav li {
     margin-left: 0.25em;
   }
-  .header-nav > li ~ li {
+  .header-nav li ~ li {
     padding-left: 0.25em;
   }
   .nav-links a {
     font-size: 3.25vw;
   }
   .header-logo {
-    left: auto;
+    left: auto;             /* paddingがなくなるので、-30pxはよろしくない */
   }
 
   /* home */
   .home-callout {
-    flex-direction: column;
+    flex-direction: column; /* flexboxの方向を縦に */
   }
   .callout-copy {
-    flex: 1;
+    flex: 1;                /* サイズ設定を解除(解除しないと下に変な空白ができる) */
   }
   .bio-box {
-    float: none;
-    font-size: 1.3rem;
-    width: auto;
+    float: none;            /* 縦に3つ並ぶのを解除 */
+    font-size: 1.3rem;      /* フォントが小さいので修正 */
+    width: auto;            /* 幅を1/3にしていたのを解除 */
   }
 
   /* gallery */
   .gallery {
-    flex-direction: column;
+    flex-direction: column; /* 縦方向に並べる(.colではない点に注意) */
   }
   .gallery .col {
-    padding: 1em;
+    padding: 1em;           /* paddingを少し小さくする */
   }
   .gallery .gallery-thumbs {
-    flex: 1;
-    height: auto;
-    white-space: nowrap;
-    width: 100%;
+    flex: 1;                /* 幅を可変に */
+    height: auto;           /* 固定の高さを解除 */
+    white-space: nowrap;    
+    width: 100vw;           /* 高さの替わりに幅を固定 */
   }
   .gallery-thumbs > div {
-    display: inline-block;
+    display: inline-block;  /* 横並びにする */
   }
   .gallery-thumbs img {
-    height: 7vh;
-    margin: 0 10px 0 0;
-    width: auto;
+    height: 7vh;            /* 縦固定 */
+    margin: 0 10px 0 0;     /* 右にマージン */
+    width: auto;            /* 幅は自動にして、縦にあわせる */
   }
+
   .gallery .gallery-info {
-    flex: 1;
+    flex: 1;                /* 幅固定解除 */
   }
 
   /* blog */
-  .post-aside {
+  .blog-recent {
     display: none;
+  }
+  .blog-previews {
+    padding: 0;             /* colの2emを0にする */
+    order: 1;
+  }
+  .post-aside {
+    display: none;          /* RECENT POSTSを表示しない */
   }
 }
