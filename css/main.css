@@ -529,6 +529,13 @@ h2 ~ p {
   }
 
   /* blog */
+  .blog-recent {
+    display: none;
+  }
+  .blog-previews {
+    padding: 0;             /* colの2emを0にする */
+    order: 1;
+  }
   .post-aside {
     display: none;          /* RECENT POSTSを表示しない */
   }
