@@ -47,6 +47,9 @@ a img {
 /* END RESET*/
 
 /* グローバルスタイル */
+body {
+  font-family: helvetica, arial, sans;
+}
 h1 {
   font-size: 7vw;
   margin-top: 0;
