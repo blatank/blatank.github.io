@@ -10,6 +10,15 @@ a {
   color: #f00;
 }
 
+/*　ヘッダースタイル */
+.header-nav {
+  float: right;
+}
+
+.header-nav li {
+  display: inline-block;
+}
+
 /* ヒーロースタイル */
 .full-hero {
   background-color: #c7dbfc;
