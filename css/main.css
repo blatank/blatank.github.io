@@ -18,6 +18,10 @@ a {
 }
 
 /*　ヘッダースタイル */
+.header {
+  background-color: #000;
+  color: #fff;
+}
 .header-nav {
   float: right;
   padding: 5.5vh 60px 0 0;
@@ -31,11 +35,25 @@ a {
   padding-left: 1em;
 }
 .header-nav > li:first-child a {
-  color: #ed6e2f;
+  color: #fff;
 }
 .header-nav > li:first-child a:hover {
   color: #000;
 }
+.header-logo {
+  background-color: #000;
+  box-sizing: border-box;
+  display: block;
+  height: 10vh;
+  padding-top: 10px;
+  position: relative;
+  text-align: center;
+  width: 10vh;
+}
+.header-logo img {
+  width: 4.3vh;
+}
+
 .header-nav a {
   color: #000;
   font-size: 0.8rem;
