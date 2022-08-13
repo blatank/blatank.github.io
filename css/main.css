@@ -1,4 +1,9 @@
 /* グローバルスタイル */
+html {
+  /* box-shadow: 水平方向の距離 垂直方向の距離 ぼかし距離 広がり距離 影の色 inset(ボックスの外側の影から内側の影に変更されます); */
+  box-shadow: 0 0 0 30px #000 inset;
+  padding: 0 30px;
+}
 body {
   font-family: helvetica, arial, sans;
 }
@@ -21,12 +26,16 @@ a {
 .header {
   background-color: #000;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
 }
 .header-logo {
   background-color: #000;
   box-sizing: border-box;
   display: block;
   height: 10vh;
+  left: -30px;
   padding-top: 10px;
   position: relative;
   text-align: center;
