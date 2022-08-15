@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
 }
 .content-container {
+  display: flex;
   flex: 1 1 auto;     /* grow, shrink, basisの順 */;
   padding-top: 10vh;
   width: 100%;
@@ -119,6 +120,28 @@ h2 ~ p {
 }
 .footer-nav a {
   color: #ccc;
+}
+
+/* カラムスタイル */
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;     /* カラムの変化は縮小のみ */
+}
+.col-three .col-content {
+  flex: 1;            /* コンテンツエリアは縮小と拡大どちらもあり */
+}
+.col-three .col-aside {
+  flex: 0 1 20em;     /* カラムの変化は縮小のみ */
 }
 
 /* ヒーロースタイル */
