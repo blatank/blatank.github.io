@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
 }
 .content-container {
-  flex-grow: 1;
+  flex: 1 1 auto;     /* grow, shrink, basisの順 */;
   padding-top: 10vh;
   width: 100%;
 }
@@ -213,15 +213,13 @@ h2 ~ p {
   margin-top: 1em;
 }
 .callout-title {
-  flex-grow: 1;
-  flex-basis: 0;      /* コンテンツの幅だけ広げる */
+  flex: 1;            /* flex: 1 1 0;と同じ */
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
-  flex-basis: 45em;   /* 説明文の幅を固定にする */
-  flex-shrink: 0;     /* 説明文の幅は縮小されない */
+  flex: 0 0 45em;     /* 説明文の幅を固定。縮小されない */
   font-size: 0.8rem;
   padding: 0 3vw;
 }
