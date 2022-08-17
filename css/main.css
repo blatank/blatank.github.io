@@ -346,8 +346,8 @@ h2 ~ p {
   display: inline-block;
   margin: 0 0 10px;
   opacity: 0.5;
-  width: 100%;
   transition: all 0.5s ease-in-out;
+  width: 100%;
 }
 .gallery-thumbs img:hover {
   opacity: 1;
@@ -358,6 +358,9 @@ h2 ~ p {
 }
 .gallery-photo {
   position: relative;
+}
+.gallery-photo img {
+  width: 100%;
 }
 .gallery-info {
   font-size: 0.8rem;
@@ -463,7 +466,7 @@ h2 ~ p {
     margin-left: 0.25em;
   }
   .header-nav > li ~ li {
-    padding: 0.25em;
+    padding-left: 0.25em;
   }
   .nav-links a {
     font-size: 3.25vw;
@@ -488,5 +491,30 @@ h2 ~ p {
   /* ブログスタイル */
   .post-aside {
     display: none;
+  }
+
+  /* ギャラリースタイル */
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery .col {
+    padding: 1em;
+  }
+  .gallery .gallery-thumbs {
+    flex: 1;
+    height: auto;
+    white-space: nowrap;
+    width: 100vw;
+  }
+  .gallery-thumbs > div {
+    display: inline-block;
+  }
+  .gallery-thumbs img {
+    height: 7vh;
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+  .gallery .gallery-info {
+    flex: 1;
   }
 }
